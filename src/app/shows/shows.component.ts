@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Constants} from '../common/constants';
+import {Constants} from '../common/constants/constants';
+import {TvShow} from '../common/models/tv-show.model';
 
 @Component({
   selector: 'app-shows',
@@ -10,7 +11,7 @@ import {Constants} from '../common/constants';
 })
 
 export class ShowsComponent implements OnInit {
-  @Input() public data: any = [];
+  @Input() public data: TvShow[] = [];
   public page: any;
   public initial: any;
   public numberOfShows: any;
@@ -64,7 +65,12 @@ export class ShowsComponent implements OnInit {
     if (this.page > 1) {
       this.initial = this.page * 10 + 1;
     } else {
-      this.initial = 1;
+      if (this.total > 0) {
+        this.initial = 1;
+      } else {
+        this.numberOfShows = 1;
+        this.initial = 0;
+      }
     }
   }
 }
