@@ -1,0 +1,54 @@
+<div class="grid">
+  <div class="column is-shrink is-mobile-shrink is-inline-label has-no-padding-right">
+    <label>Sort by:</label>
+  </div>
+  <div class="column is-7 is-mobile-shrink is-inline-label">
+    <div class="has-dropdown is-hoverable is-right">
+      <a class="has-arrow has-text-black">A-Z</a>
+      <ul class="dropdown">
+        <li class="dropdown__link">Z-A</li>
+      </ul>
+    </div>
+  </div>
+  <div class="top__links column is-shrink is-desktop-auto is-offset-desktop-1">
+    <div class="is-input-group">
+      <input #search1 (keyup.backspace)="search(search1.value,1)" (keyup.enter)="search(search1.value,1)" id="search1"
+             placeholder="Type and Press Enter"/>
+    </div>
+  </div>
+</div>
+<mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
+<div class="grid has-text-center has-link-inherit">
+  <div *ngFor="let tvShow of data" class="column is-3 is-mobile-half">
+    <a class="card has-no-shadow has-no-border is-disabled" href="#">
+      <div class="card__image">
+        <img *ngIf="tvShow.image_thumbnail_path != nullImage ; else nullImageBlock" alt="missing"
+             class="has-bg-black  img-h250"
+             src="{{tvShow.image_thumbnail_path}}"/>
+        <ng-template #nullImageBlock><svg  viewBox="0 0 100 100" class="img-h250 has-bg-dark-grey"></svg>
+        </ng-template>
+      </div>
+      <div class="card__content">
+        <h6 class="has-no-margin">{{tvShow.name}}</h6>
+        <span>{{tvShow.status}}</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="column is-full">
+    <nav class="pagination">
+      <span class="is-tablet-up">Showing {{initial}} to {{initial + numberOfShows - 1}} of {{total}} shows </span>
+      <ul class="is-end">
+        <li *ngIf="page > 1 ; else disabledPreviousBlock"><a href="{{page-1}}">Previous</a></li>
+        <ng-template #disabledPreviousBlock>
+          <li class="is-disabled"><a href="#">Previous</a></li>
+        </ng-template>
+        <li *ngIf="page < pages ; else disabledNextBlock" class="is-active has-bg-dark"><a
+          (click)="search(search1.value,page+1)">Next</a></li>
+        <ng-template #disabledNextBlock>
+          <li class="is-disabled "><a>Next</a></li>
+        </ng-template>
+      </ul>
+    </nav>
+  </div>
+</div>

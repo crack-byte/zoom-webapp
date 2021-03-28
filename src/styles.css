@@ -1,0 +1,14 @@
+@import "~orbitcss/css/orbit.min.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+.img-h250 {
+  width: 100%;
+  height: 250px;
+}
+
+.img-hw20 {
+  width: 50px;
+  height: 70px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
