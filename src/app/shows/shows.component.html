@@ -21,11 +21,12 @@
 <div class="grid has-text-center has-link-inherit">
   <div *ngFor="let tvShow of data" class="column is-3 is-mobile-half">
     <a class="card has-no-shadow has-no-border is-disabled" href="#">
-      <div class="card__image">
+      <div class="card__image image is-rounded-tile">
         <img *ngIf="tvShow.image_thumbnail_path != nullImage ; else nullImageBlock" alt="missing"
              class="has-bg-black  img-h250"
              src="{{tvShow.image_thumbnail_path}}"/>
-        <ng-template #nullImageBlock><svg  viewBox="0 0 100 100" class="img-h250 has-bg-dark-grey"></svg>
+        <ng-template #nullImageBlock>
+          <svg class="img-h250 has-bg-dark-grey" viewBox="0 0 100 100"></svg>
         </ng-template>
       </div>
       <div class="card__content">
