@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {ShowsComponent} from './shows/shows.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +8,6 @@ import {ShowsComponent} from './shows/shows.component';
 export class AppComponent {
   title = 'zoom';
 
-  constructor(public  showsComponent: ShowsComponent) {
+  constructor() {
   }
 }

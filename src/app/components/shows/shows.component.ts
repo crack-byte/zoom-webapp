@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {GlobalConstants} from '../common/constants/global-constants';
-import {TvShow} from '../common/models/tv-show.model';
+import {GlobalConstants} from '../../common/constants/global-constants';
+import {TvShow} from '../../common/models/tv-show.model';
 
 @Component({
   selector: 'app-shows',

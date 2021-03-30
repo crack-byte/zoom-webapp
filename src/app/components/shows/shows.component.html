@@ -20,7 +20,7 @@
 <mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
 <div class="grid has-text-center has-link-inherit">
   <div *ngFor="let tvShow of data" class="column is-3 is-mobile-half">
-    <a class="card has-no-shadow has-no-border is-disabled" href="#">
+    <a class="card has-no-shadow has-no-border is-disabled" href="/show-details?q={{tvShow.id}}">
       <div class="card__image image is-rounded-tile">
         <img *ngIf="tvShow.image_thumbnail_path != nullImage ; else nullImageBlock" alt="missing"
              class="has-bg-black  img-h250"

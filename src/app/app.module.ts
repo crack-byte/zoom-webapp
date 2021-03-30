@@ -3,19 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShowsComponent } from './shows/shows.component';
+import { ShowsComponent } from './components/shows/shows.component';
 import {FormsModule} from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ShowDetailsComponent } from './components/show-details/show-details.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowsComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ShowDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
