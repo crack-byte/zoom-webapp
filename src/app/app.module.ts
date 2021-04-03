@@ -12,6 +12,8 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ShowDetailsComponent } from './components/show-details/show-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { NgImageSliderModule } from 'ng-image-slider';
     FooterComponent,
     NavbarComponent,
     ShowDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
