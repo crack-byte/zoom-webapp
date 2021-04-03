@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {GlobalConstants} from '../../common/constants/global-constants';
 import {TvShow} from '../../common/models/tv-show.model';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-shows',
@@ -26,7 +26,7 @@ export class ShowsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<any>(GlobalConstants.host + '/api/shows').subscribe({
+    this.http.get<any>(environment.host + '/api/shows').subscribe({
       next: data => {
         this.initialize(data);
         this.isLoading = false;
@@ -43,7 +43,7 @@ export class ShowsComponent implements OnInit {
     this.data = [];
     this.isLoading = true;
     this.searchKey = searchKey;
-    this.http.get<any>(GlobalConstants.host + '/api/shows' + '?q=' + this.searchKey + '&page=' + page)
+    this.http.get<any>(environment.host + '/api/shows' + '?q=' + this.searchKey + '&page=' + page)
       .subscribe({
         next: data => {
           this.initialize(data);

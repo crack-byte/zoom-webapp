@@ -1,48 +1,22 @@
 <section class="section has-link-inherit">
   <div class="container grid is-flex-start">
-    <div class="column is-two-thirds grid is-vertical">
-      <div class="column has-no-padding-top">
-        <div class="has-bg-light" style="height: 300px">
-          <h5 class="tag is-dark">
-            {{data.tvShow.status}}
-          </h5>
-          <div class="section has-text-center">
-            <h5 class="has-text-light-grey">Article image</h5>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <h4><a href="#">5 Reasons You'll Love Our Company</a></h4>
-        <p class="has-text-muted">
-          September 29th 2019 | by <a href="#">Rhys Hall</a>
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </p>
-        <div class="has-text-right">
-          <small>
-            <a class="has-text-muted" href="#">
-              Read more &gt;
-            </a>
-          </small>
-        </div>
-      </div>
+    <div class="column is-3 grid is-vertical">
+      <ng-image-slider [animationSpeed]="6"  [imageSize]="{width: '100%', height: 300}" [infinite]="true" [imagePopup]="true" [autoSlide]="true"  [images]="data.images" #nav></ng-image-slider>
     </div>
-    <div class="column is-one-third">
-      <h4>Recent Posts</h4>
-      <a class="media" href="#">
-        <div class="media__left">
-          <div class="image is-tiny-square">
-            <svg class="has-bg-info" height="100%" viewBox="0 0 100 100" width="100%"></svg>
+    <div class="column is-9 grid is-vertical">
+      <h3 class="fw-bolder">{{data.name}}</h3>
+      <p class="text-justify">{{data.description}}</p>
+      <div class="timeline p-4 block mb-4">
+        <div class="tl-item active" *ngFor="let episode of data.episodes">
+          <div class="tl-dot"><a class="tl-author" href="#" data-abc="true"><span class="w-32 avatar circle gd-warning">G</span></a></div>
+          <div class="tl-content">
+            <div class="">{{episode.name}}</div>
+            <div class="">{{episode.season}}</div>
+            <div class="tl-date text-muted mt-1">{{episode.air_date}}</div>
           </div>
         </div>
-        <div class="media__content">
-          <h6 class="has-font-normal">5 Reasons You'll Love Our Company</h6>
-          <small class="has-text-muted">September 29th 2019</small>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
+
 </section>
