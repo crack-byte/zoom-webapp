@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './components/register/register.component';
     ShowDetailsComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
